@@ -1,0 +1,75 @@
+body{
+	background-color : #dae1e7;
+	font-family : Helvetica;
+}
+
+/**Codigo de modificacion para el div general*/
+#myDiv{
+	background-color : #1c4b82;
+	width : 1600px;
+	height : 800px;
+	margin : auto;
+	border-radius : 25px;
+	border : 2px solid #183661;
+	padding : 15px;
+	color : white;
+	text-align : center;
+}
+
+/**Div con controles*/
+#controlDiv{
+	background-color : #183661;
+	width : 550px;
+	height : 700px;
+	float : right;
+	border-radius : 25px;
+	border : 2px solid #183661;
+}
+
+/**Div con canvas*/
+#canvasDiv{
+	background-color : #183661;
+    width : 1005px;
+	height : 705px;
+	float : left;
+	border-radius : 25px;
+	border : 2px solid #183661;
+	padding : auto;
+}
+
+/**Modificaciones de la tabla (General)*/
+#myTable{
+	color : #5e5e5e;
+	background-color : #dae1e7;
+	width : 525px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+	margin-right : auto;
+	margin-left : auto;	
+	border-collapse : collapse;
+	border-radius : 10px;
+	overflow : hidden;
+	font-family : Helvetica;
+	
+}
+
+/**Modificaciones de los headers de la tabla*/
+#myTableRow{
+	background-color : #dd6b4d;
+	font-size : 18px;
+	color : black;
+}
+
+/*Modificaciones de todas las filas de la tabla (Menos los headers)*/
+tr{
+	height : 40px;	
+}
+
+/**Modificaciones de todas las filas impares de la tabla*/
+tbody tr:nth-child(odd) {
+  background-color : #f5f5f5;
+}
+
+
+
+
