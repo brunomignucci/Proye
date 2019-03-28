@@ -19,8 +19,10 @@ class OBJParser {
 		let dstIndices = [];
 		let map = {}; // 1/2/3 => 4
 		let nextIndex = 0;
-
+		
+		
 		for (let i = 0; i < lines.length; i++) {
+
 			let parts = lines[i].trim().split(' ');
 			if (parts.length > 0) {
 				switch(parts[0]) {

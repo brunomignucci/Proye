@@ -23,8 +23,9 @@ function onLoad() {
 	gl = canvas.getContext('webgl2');
 
 	let indices = parsedOBJ.indices;
+	//Tengo que convertir los indices de triangulos a indices de lineas
+	indices = convertIndexes(indices);
 	indexCount = indices.length;
-
 	let positions = parsedOBJ.positions;
 	let colors = parsedOBJ.positions;//Will use position coordinates as colors (as example)
 
@@ -61,6 +62,23 @@ function onLoad() {
 	gl.enable(gl.DEPTH_TEST);
 }
 
+//Reordeno valores para dibujarlos como lineas				
+function convertIndexes(indexes){
+	let newIndexes = [];
+	for (let x = 0; x < indexes.length; x = x + 3) {
+		//Linea 1
+		newIndexes.push(indexes[x]);
+		newIndexes.push(indexes[x + 1]);
+		//Linea 2
+		newIndexes.push(indexes[x + 1]);
+		newIndexes.push(indexes[x + 2]);
+		//Linea 3. Tiene que ser asi para respetar el sentido antihorario
+		newIndexes.push(indexes[x + 2]);
+		newIndexes.push(indexes[x]);
+	}
+	return newIndexes;
+}
+
 function onRender() {
 	let rotationMatrix = mat4.create();
 	let scaleMatrix = mat4.create();
@@ -78,7 +96,7 @@ function onRender() {
 	gl.uniformMatrix4fv(u_projMatrix, false, projMatrix);
 
 	gl.bindVertexArray(vao);
-	gl.drawElements(gl.TRIANGLES, indexCount, gl.UNSIGNED_INT, 0);
+	gl.drawElements(gl.LINES, indexCount, gl.UNSIGNED_INT, 0);
 
 	gl.bindVertexArray(null);
 	gl.useProgram(null);

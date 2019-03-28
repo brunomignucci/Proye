@@ -59,10 +59,19 @@
 					<td>Zoom in/out</td>
 					<td><input type="range" min="-100" max="100" value="0" oninput="onSliderScale(this);"></td>
 				</tr>
+			</table>
+			<table id='myTable'>
+				<tr id='myTableRow'>
+					<th colspan="2">Cargar Objetos</th>
+				</tr>
 				<tr>
-				<td>1.Choose Model file</td>
-				<td><input type='file' onchange='Utils.onFileChooser(event, onModelLoad)'/></td>
-			</tr>
+					<td>1.Choose Model file</td>
+					<td><input type='file' onchange='Utils.onFileChooser(event, onModelLoad)'/></td>
+				</tr>
+				<tr>
+					<td>2.Choose Model file</td>
+					<td><input type='file' onchange='Utils.onFileChooser2(event, onModelLoad)'/></td>
+				</tr>
 			</table>
 			
 			<button onclick="onLoad();">Load</button>
