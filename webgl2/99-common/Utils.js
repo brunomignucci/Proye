@@ -20,6 +20,37 @@ class Utils {
 		fileReader.readAsText(file);
 	}
 
+	static boundingBoxCenter(positions){
+		//Calculo el centro de un objeto visto como bounding box.
+		let center=[];
+		let x=[];
+		let y=[];
+		let z=[];
+		let xMin;
+		let xMax;
+		let yMin;
+		let yMax;
+		let zMin;
+		let zMax;
+		for(let i=0; i<positions.length;i++){
+			if(i%3 ==0)x[x.length]=positions[i];
+			else if (i%3 ==1)y[y.length]=positions[i];
+			else if (i%3 ==2)z[z.length]=positions[i];
+		}
+		xMin=Math.min.apply(null,x);
+		xMax=Math.max.apply(null,x);
+		yMin=Math.min.apply(null,y);
+		yMax=Math.max.apply(null,y);
+		zMin=Math.min.apply(null,z);
+		zMax=Math.max.apply(null,z);
+
+		center[0]=(xMin+xMax)/2;
+		center[1]=(yMin+yMax)/2;
+		center[2]=(zMin+zMax)/2;
+
+		return center;
+	}
+
 	static reArrangeIndicesToRenderWithLines(indices) {
 		let result = [];
 		let count = indices.length;

@@ -6,6 +6,8 @@ var indexCount = 0;
 var indexCount2= 0;
 
 var mov=0;
+var obj1center=[];
+var obj2center=[];
 
 //Uniform locations.
 var u_modelMatrix;
@@ -31,6 +33,9 @@ function onLoad() {
 	indices = convertIndexes(indices);
 
 	let indices2 = parsedOBJ2.indices;
+	console.log(parsedOBJ.positions);
+	obj1center=Utils.boundingBoxCenter(parsedOBJ.positions);
+	console.log(obj1center)
 	//Tengo que convertir los indices de triangulos a indices de lineas
 	indices2 = convertIndexes(indices2);
 	
