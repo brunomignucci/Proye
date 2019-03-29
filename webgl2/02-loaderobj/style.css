@@ -34,7 +34,6 @@ body{
 	float : left;
 	border-radius : 25px;
 	border : 2px solid #183661;
-	padding : auto;
 }
 
 /**Modificaciones de la tabla (General)*/
@@ -70,6 +69,12 @@ tbody tr:nth-child(odd) {
   background-color : #f5f5f5;
 }
 
-
+#webglCanvas{
+	width : 1000px;
+	height : 700px;
+	border : 2px solid #183661;
+	border-radius : 25px;    
+	margin : auto;
+}
 
 

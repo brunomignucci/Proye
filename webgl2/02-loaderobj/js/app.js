@@ -53,8 +53,8 @@ function onLoad() {
 	let up = [0, 1, 0];
 	mat4.lookAt(viewMatrix, eye, target, up);
 
-	let fovy = glMatrix.toRadian(50);
-	let aspect = 1;
+	let fovy = glMatrix.toRadian(45);
+	let aspect = canvas.width / canvas.height;
 	let zNear = 0.1;
 	let zFar = 10.0;
 	mat4.perspective(projMatrix, fovy, aspect, zNear, zFar);
