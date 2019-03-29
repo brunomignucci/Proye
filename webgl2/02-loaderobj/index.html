@@ -31,7 +31,7 @@
 				</tr>
 				<tr>
 					<td>Rotación del planeta(sobre sí mismo)</td>
-					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotation(this);"></td>
+					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotationPlanet(this);"></td>
 				</tr>
 			</table>
 			<table id='myTable'>
@@ -40,11 +40,11 @@
 				</tr>
 				<tr>
 					<td>Rotación del satelite (Sobre sí mismo)</td>
-					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotation(this);"></td>
+					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotationSatellite(this);"></td>
 				</tr>
 				<tr>
 					<td>Rotación del satelite (Orbitando sobre el planeta)</td>
-					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotation(this);"></td>
+					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotationSatellitePlanet(this);"></td>
 				</tr>
 			</table>
 			<table id='myTable'>
@@ -53,11 +53,17 @@
 				</tr>
 				<tr>
 					<td>Rotación de la cámara (Sobre la escena)</td>
-					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotation(this);"></td>
+					<td><input type="range" min="0" max="360" value="0" oninput="onSliderRotationCamera(this);"></td>
+
 				</tr>
+				<tr >
+					<td><button onclick="onLoad();">Rotacion Automatica Izq</button></td>
+					<td><button onclick="onLoad();">Rotacion Automatica Der</button></td>
+				</tr>
+
 				<tr>
 					<td>Zoom in/out</td>
-					<td><input type="range" min="-100" max="100" value="0" oninput="onSliderScale(this);"></td>
+					<td><input type="range" min="-100" max="100" value="0" oninput="onSliderZoomCamera(this);"></td>
 				</tr>
 			</table>
 			<table id='myTable'>
@@ -70,7 +76,7 @@
 				</tr>
 				<tr>
 					<td>2.Choose Model file</td>
-					<td><input type='file' onchange='Utils.onFileChooser(event, onModelLoad)'/></td>
+					<td><input type='file' onchange='Utils.onFileChooser(event, onModelLoad2)'/></td>
 				</tr>
 			</table>
 			
